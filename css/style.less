@@ -1,0 +1,308 @@
+@import "normalize.less";
+@import "flexbox.less";
+@import "layout.less";
+@import "fancyradios.less";
+
+@font-face
+{
+    font-family: swizzfont;
+    src: url(../fonts/GloriaHallelujah.ttf);
+}
+
+
+//--- Fancy button ----------------------------//
+.swizz-button {
+    display: block;
+    font-size: 1.5em;
+    margin: 5px;
+    cursor: pointer;
+    -webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
+    -webkit-user-drag: none;
+    -webkit-transition: 0.1s linear all;
+    -moz-transition: 0.1s linear all;
+    transition: 0.1s linear background;
+    height: 55px;
+    padding: 5px;
+    box-shadow: 2px 2px 5px #888888;    
+    color: #D8BFD8;
+    background: linear-gradient(#C6A3FF, #9370DB);
+    .message {
+        display: inline-block;
+        font-weight: bold;
+        text-shadow: -1px -1px 0 rgba(114, 89, 114, 0.63);
+        padding: 0;
+    }
+    .price {
+        font-family: arial;
+        font-weight: normal;
+        font-size: .8em;
+        text-shadow: -1px -1px 0 rgba(114, 89, 114, 0.63);
+        padding: 0px;
+        margin-top: 2px;
+    }
+    .active {
+        color: #76EE00
+    }
+    &:hover {
+        background: linear-gradient(#BF99E7, #9966CC);
+    }
+    &:active {
+        position: relative;
+        top: 1px;
+        background: linear-gradient( #AD8AF5, #9471DC);
+    }
+}
+
+.inactive {
+    .inner {
+        background: linear-gradient(#999, #333);
+        color: #BBB
+    }
+    &:hover {
+        border: 3px solid rgba(130,130,130,.5);
+        .inner {
+            box-shadow: 0 1px 0 #666 inset !important;
+            background: linear-gradient(#999, #333) !important;
+        }
+    }
+    &:active {
+        position: relative;
+        top: 0px;
+    }
+}
+
+
+
+.swizz-select {
+    position: relative;
+    cursor: pointer;
+    -webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
+    -webkit-user-drag: none;
+    margin: 5px;
+	//border: 1px solid gray;
+    padding: 5px;
+    box-shadow: 2px 2px 5px #888888;
+    background: linear-gradient(#C6A3FF, #9370DB);
+    color: #D8BFD8;
+    text-shadow: -1px -1px 0 rgba(114, 89, 114, 0.63);
+	h1 {
+	    font-size: 1.5em;
+		padding: 0;
+		margin: 1px;
+		transition: color @fancy-radio-transition;
+		a {
+		    font-family: ariel, sans-serif;
+		    color: #00F;
+		    font-size: .5em;
+		    margin-left: 15px;
+		}
+		span {
+		    font-family: ariel, sans-serif;
+		    font-weight: normal;
+		    margin-top: 2px;
+		}
+	}
+	p {
+		margin: 0;
+		display: block;
+	}
+
+    .selected {
+        display: block;
+        position: relative;
+    	span {
+    	    margin-right: 10px;
+    	}
+    }
+    .arrow {
+        display: inline-block;
+        position: relative;
+        width: 50px;
+        height: 50px;
+    	border-left: 1px solid gray;
+    	padding-left: 5px;
+    }
+    .arrow-small {
+        display: inline-block;
+        position: relative;
+        width: 32px;
+        height: 32px;
+    	border-left: 1px solid gray;
+    	padding-left: 5px;
+    }
+    &:hover {
+        background: linear-gradient(#BF99E7, #9966CC);
+    }
+    .selection {
+        position: absolute;
+        display: none;
+        width: 100%;
+        z-index: 1;
+        padding: 0;
+        margin: 0;
+        margin-top: 6px;
+        margin-left: -5px;
+        background: #9370DB;
+    	box-shadow: 2px 2px 5px #888888;
+        li {
+            margin: 0;
+            position: relative;
+        	display: block;
+            border-top: 1px solid gray;
+        	padding: 5px;
+        	cursor: pointer;
+        	clear: both;
+        	transition: background 		@fancy-radio-transition, 
+        				border-color 	@fancy-radio-transition;
+        	&:first-of-type {
+        	    border-top: none;
+            	margin-top: 0;
+        	}
+        	&:hover {
+        	    background: yellow;
+        	}
+        }
+    }
+
+}
+
+.swizzselectactive {
+    display: block !important;
+}
+
+
+
+.bold { font-weight: bold; }
+
+.left { text-align: left;}
+.center { text-align: center; }
+.right { text-align: right;}
+
+.pull-right {
+    float: right;
+}
+
+#payments {
+    padding-top:10px;
+}
+
+h1{
+    font-family: 'Kite One', sans-serif;
+    margin: 0;
+}
+
+ul.no-style {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul {
+    margin: 5px;
+    li {
+        margin-top: 5px;
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+}
+.final-receipt {
+    width: 100% !important;
+}
+
+.receipt {
+    width: 85%;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 5px #888888;
+    .description {
+        display: block;
+        margin: 2px 0 5px 0;
+    }
+    table {
+        width: 100%;
+        td {
+            text-align: right;
+        }
+        td:first-of-type {
+            text-align: left;
+        }
+    }
+    .amount {
+        margin: 10px 0 7px 0;
+        font-weight: bold;
+        .right();
+    }
+}
+    
+input[type="text"] {
+    border-radius:5px;   
+    border:1px solid gray;
+    padding: 5px;
+}
+
+form {
+    display: inline-block;
+    position: relative;
+    background:inherit;
+    margin: 5px;
+    padding: 13px 15px 13px 15px;
+    vertical-align: top;
+    h2 {
+        font-family: 'Kite One', sans-serif;
+        display: inline-block;
+        margin: 0px;
+        margin-bottom:-17px;
+        padding: 0 5px;
+        position: absolute;
+        background: white;
+        top:-20px;
+        left: 7px;
+    }
+    label {
+        display: block;
+        margin: 6px 0;
+    }
+    input[type="image"]{
+        position: relative;
+        bottom: -8px;
+        right: 0px;
+    }
+    input#donate {
+        bottom:0px;
+    }
+    div.select {
+        position: relative;
+        height: 34px;
+        overflow:hidden;
+        background: url(new_arrow.jpg) no-repeat right #FFF;
+        border: 1px solid gray;
+        border-radius: 5px;
+        cursor: pointer;
+        select{
+            background:transparent;
+            padding: 5px;
+            font-size: 16px;
+            line-height: 1;
+            border: 0;
+            border-radius: 0;
+            height: 34px;
+            width:100%;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+    }
+    div[class|="popup-gallery"]{
+        position:absolute;
+        border: 1px solid gray;
+        background: white;
+        top: -20px;
+        right:5px;
+        padding: 5px;
+        height: 45px;
+        a{
+            text-decoration: none;
+            border: 0px;
+        
+        }
+    }
+}
+

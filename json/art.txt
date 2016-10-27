@@ -1,0 +1,204 @@
+[
+	{
+		"name": "Level 1",
+		"code": "LV1",
+		"description": "Sketch Stream exclusively",
+		"price": "12",
+		"group":"base",
+		"starting":true,
+		"combinations": [
+			{
+				"combination": [ "Colour", "+1 Character" ],
+				"not": [ "Cell Shade" ],
+				"price": "3"
+			},
+			{
+				"combination": [ "Colour", "+2 Characters" ],
+				"not": [ "Cell Shade" ],
+				"price": "6"
+			},
+			{
+				"combination": [ "Colour", "+1 Character", "Cell Shade" ],
+				"price": "5.50"
+			},
+			{
+				"combination": [ "Colour", "+2 Characters", "Cell Shade" ],
+				"price": "11"
+			}
+		],
+		"options" : [{
+			"name":"Colour",
+			"price":"7",
+			"type":"button",
+			"group":"colour",
+			"code":"CO"
+		},
+		{		
+			"name":"Background",
+			"price":"N/A",
+			"type":"button",
+			"group":"background",
+			"code":"B"
+		},
+		{
+			"name":"Cell Shade",
+			"price":"5",
+			"type":"option",
+			"group":"shading",
+			"code":"E"
+		},
+		{
+			"name":"Smooth Shade",
+			"price":"N/A",
+			"type":"option",
+			"group":"shading",
+			"code":"SM"
+		},
+		{
+			"name": "Closeup/Internal",
+			"price": "5",
+			"type": "button",
+			"group": "internal",
+			"ignoresfilename": true,
+			"overlayfilename": "Sausage-Sizzle1",
+			"overlayposition": [ 157, 5 ],
+			"code": "CI"
+		},
+		{
+			"name": "+Swizz",
+			"price": "5",
+			"type": "button",
+			"group": "swizz",
+			"ignoresfilename": true,
+			"overlayfilename": "dogsm",
+			"overlayposition": [ 430, 178 ],
+			"code": "HS"
+		},
+		{
+			"name":"+1 Character",
+			"price":"7",
+			"type":"option",
+			"group":"character",
+			"code":"H1"
+		},
+		{
+			"name":"+2 Characters",
+			"price":"14",
+			"type":"option",
+			"group":"character",
+			"code":"H2"
+		}
+		]
+	},
+	{
+		"name": "Level 2",
+		"description":"Refined Lineart",
+		"code": "LV2",
+		"price": "20",
+		"group":"base",
+		"combinations": [
+			{
+				"combination": [ "Colour", "+1 Character" ],
+				"not": [ "Cell Shade", "Smooth Shade" ],
+				"price": "5"
+			},
+			{
+				"combination": [ "Colour", "+2 Characters" ],
+				"not": [ "Cell Shade", "Smooth Shade" ],
+				"price": "10"
+			},
+			{
+				"combination": [ "Colour", "+1 Character", "Cell Shade" ],
+				"not": [ "Smooth Shade" ],
+				"price": "10"
+			},
+			{
+				"combination": [ "Colour", "+2 Characters", "Cell Shade" ],
+				"not": [ "Smooth Shade" ],
+				"price": "15"
+			},
+			{
+				"combination": [ "Colour", "+1 Character", "Smooth Shade" ],
+				"not": [ "Cell Shade" ],
+				"price": "15"
+			},
+			{
+				"combination": [ "Colour", "+2 Characters", "Smooth Shade" ],
+				"not": [ "Cell Shade" ],
+				"price": "25"
+			},
+			{
+				"combination": [ "Background", "Colour" ],
+				"not": [ "Cell Shade", "Smooth Shade" ],
+				"price": "5"
+			},
+			{
+				"combination": [ "Background", "Cell Shade" ],
+				"not": [ "Smooth Shade" ],
+				"price": "10"
+			},
+			{
+				"combination": [ "Background", "Smooth Shade" ],
+				"not": [ "Cell Shade" ],
+				"price": "10"
+			}
+		],
+		"options": [{
+				"name":"Colour",
+				"price":"10",
+				"type":"button",
+				"group":"colour",
+				"code":"CO"
+			},
+			{
+				"name":"Background",
+				"price":"10",
+				"type":"button",
+				"group":"background",
+				"code":"B"
+			},
+			{
+				"name": "Closeup/Internal",
+				"price": "10",
+				"type": "button",
+				"group": "internal",
+				"ignoresfilename": true,
+				"overlayfilename": "Sausage-Sizzle1",
+				"overlayposition": [ 157, 5 ],
+				"code": "CI"
+			},
+			{
+				"name":"Cell Shade",
+				"price":"10",
+				"group":"shading",
+				"code":"E"
+			},
+			{
+				"name":"Smooth Shade",
+				"price":"15",
+				"group":"shading",
+				"code":"SM"
+			},
+			{
+				"name": "+Swizz",
+				"price": "N/A",
+				"type": "button",
+				"group": "swizz",
+				"ignoresfilename": true,
+				"code": "HS"
+			},
+			{
+				"name":"+1 Character",
+				"price":"15",
+				"group":"character",
+				"code":"H1"
+			},
+			{
+				"name":"+2 Characters",
+				"price":"30",
+				"group":"character",
+				"code":"H2"
+			}
+		]
+	}
+]

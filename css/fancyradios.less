@@ -1,0 +1,67 @@
+// ----------------------------------------------
+// - Brandon Couts								-
+// ----------------------------------------------
+// - How to use this:							-
+// - put an radio input or checkbox before a 	-
+// - label. Give the radio a name, and give		-
+// - the label a "for" attr with the radio's	-
+// - name										-
+// ----------------------------------------------
+
+@fancy-radio-transition: .25s; // Affects how long it takes to switch
+@fancy-radio-checked-bg: #DFD;
+@fancy-radio-checked-border: #0C0;
+@fancy-radio-checked-font: #060;
+
+
+input[type="radio"] {
+	display: none;
+}
+label {
+    position: relative;
+	display: block;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
+	position: relative;
+	margin-top: 5px;
+	cursor: pointer;
+	clear: both;
+	box-shadow: 2px 2px 5px #888888;
+	transition: background 		@fancy-radio-transition, 
+				border-color 	@fancy-radio-transition;
+	h1 {
+	    font-size: 1.5em;
+		padding: 0;
+		margin: 1px;
+		color: black;
+		transition: color @fancy-radio-transition;
+		a {
+		    font-family: ariel, sans-serif;
+		    color: #00F;
+		    font-size: .5em;
+		    margin-left: 15px;
+		}
+		span {
+		    font-family: ariel, sans-serif;
+		    font-weight: normal;
+		    margin-top: 2px;
+		}
+	}
+	p {
+		margin: 1px;
+		display: block;
+	}
+	&:first-of-type {
+    	margin-top: 0;
+	}
+}
+
+// Proceed the with an input with a 
+:checked + label {
+	border: 1px solid @fancy-radio-checked-border;
+	background: @fancy-radio-checked-bg;
+	h1 {
+		color: @fancy-radio-checked-font;
+	}
+}

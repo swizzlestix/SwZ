@@ -1,0 +1,26 @@
+.row {
+    display: flex;
+    width: 100%;
+}
+
+[class *= "col"] {
+    margin-right: 1%;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+.column(@radius) {
+    flex: @radius;
+}
+.col-1  { .column(  1 ); }
+.col-2  { .column(  2 ); }
+.col-3  { .column(  3 ); }
+.col-4  { .column(  4 ); }
+.col-5  { .column(  5 ); }
+.col-6  { .column(  6 ); }
+.col-7  { .column(  7 ); }
+.col-8  { .column(  8 ); }
+.col-9  { .column(  9 ); }
+.col-10 { .column( 10 ); }
+.col-11 { .column( 11 ); }
+.col-12 { .column( 12 ); }

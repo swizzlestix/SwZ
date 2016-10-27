@@ -1,0 +1,89 @@
+<!doctype html>
+<!-- 
+Notes:
+Exhange rates:
+http://rate-exchange.appspot.com/currency?from=GBP&to=USD
+
+-->
+<html lang=en ng-app="Swizz">
+<head>
+	<meta charset="utf-8">
+	<title>SwizzleStix's Art Form</title>
+	<meta name="Description" CONTENT="SwizzleStix's furry comission page and prices.">	
+
+	<link href='https://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+
+	<script src="javascript/jquery.min.js"></script>
+	<script src="javascript/jquery.magnific-popup.js"></script>
+	<script src="javascript/angular.min.js"></script>
+	<script src="javascript/controllers.js"></script>
+</head>
+<body ng-controller="ShoppingCartCtrl">
+	<div class="header">
+		<div class="header-wrapper">
+			<h1>Swizzlestix's art!</h1> 
+			<div class="code">
+				Reference code: <input type="text" ng-model="code"><button ng-click="decode(code)">Apply</button>
+			</div>
+			<div class="subtitle">
+			<h3>Use this page to finalize your checkout and proceed to payment!</h3>
+			</div>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="preface">
+			<p><center><a href="Disclaimer.html" target="_blank" style="font-family: swizzfont;color: #744d74;text-shadow: -1px -1px 0px rgba(114, 89, 114, 0.63);">Disclaimer</a><br>
+			<a href="SST&amp;C.html" target="_blank" style="font-family: swizzfont;color: #744d74;text-shadow: -1px -1px 0px rgba(114, 89, 114, 0.63);">Stream Sketch Terms &amp; Conditions</a><br>
+			<span style="font-family: swizzfont;">Enter your Reference Code above and apply to load your approved commission.<br>
+			Once you are ready, proceed to Paypal to complete payment!</span>
+			</p>
+			<span class="pull-right">Swizz~</span>
+		</div>
+		<div class="row"> 
+				<form class="receipt final-receipt" name="_xclick" action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
+					<h1><strong style="font-family: 'Kite One',sans-serif;">Cart</strong></h1>
+					<div>
+						<table>
+							<tr ng-repeat="item in items">
+								<td>
+									<span style="font-family: swizzfont;">{{item.name}}</span>
+								</td>
+								<td>
+									<span style="font-family: swizzfont;">&dollar; {{item.price}}</span>
+								</td>
+							</tr>
+						</table>
+						
+					</div>
+					<hr>
+					<div class="center">
+						<div class="amount">
+							<span style="font-family: swizzfont;">Total: {{displayPrice(amount())}} USD<br>
+							Tip: <input type="number" name="tip" min="0" step=".01" ng-model="tip"></span>
+						</div>
+						<input type="hidden" name="cmd" value="_xclick">
+						<input type="hidden" name="business" value="swizzlestix@corgi.es">
+						<input type="hidden" name="currency_code" value="USD">
+						<input type="hidden" name="item_name" value="{{code}}">
+						<input type="hidden" name="amount" value="{{amount()}}">
+						<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+					</div>
+				</form>
+		</div>
+		<div class="footer">
+			<div class="code">
+				Reference code: <input type="text" ng-model="code" ng-change="decode()"><button ng-click="decode(code)">Apply</button>
+			</div>
+			<hr>
+			<div class="proper">
+				Please contact Swizzlestix before attempting to use this page-code yourself.<br> 
+				Art by Swizzlestix &copy; 2014<br>
+				Coded by DesurtFawks &copy; 2014<br>
+				Extended by Aurelius &copy; 2014
+			</div>
+		</div>
+	</div>
+</body>
+</html>

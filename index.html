@@ -1,0 +1,204 @@
+<!doctype html>
+<!-- 
+Notes:
+Exhange rates:
+http://rate-exchange.appspot.com/currency?from=GBP&to=USD
+
+-->
+<html lang=en ng-app="Swizz">
+<head>
+	<meta charset="utf-8">
+	<title>SwizzleStix's Art Form</title>
+	<meta name="Description" CONTENT="SwizzleStix's furry comission page and prices.">	
+
+	<link href='https://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+
+	<script src="javascript/jquery.min.js"></script>
+	<script src="javascript/jquery.magnific-popup.js"></script>
+	<script src="javascript/angular.min.js"></script>
+	<script src="javascript/controllers.js"></script>
+</head>
+<body ng-controller="ShoppingCartCtrl">
+	<div class="header">
+		<div class="header-wrapper">
+			<h1>Swizzlestix's art!</h1> 
+			<div class="code">
+				Reference code: <input type="text" ng-model="code"><button ng-click="decode(code)">Apply</button>
+			</div>
+			<div class="subtitle">
+			<h3>Use this page to determine the price of your desired commission!</h3>
+			</div>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="preface">
+			<p><center><a href="Disclaimer.html" target="_blank" style="font-family: swizzfont;color: #744d74;text-shadow: -1px -1px 0px rgba(114, 89, 114, 0.63);">Disclaimer</a><br>
+			<a href="SST&amp;C.html" target="_blank" style="font-family: swizzfont;color: #744d74;text-shadow: -1px -1px 0px rgba(114, 89, 114, 0.63);">Stream Sketch Terms &amp; Conditions</a><br>
+			<br>
+			<span style="font-family: swizzfont; font-size: 0.8em;">
+			Click the buttons below the image to toggle the details you wish to add to your commission.<br>
+			Once you have finished, copy the Reference Code at the bottom of the page, and send it to Swizzlestix for confirmation!<br>
+			<br>
+			If you already have a reference code, enter it at the top of the page to load the associated cart.</span></center>
+			</p>
+			<span class="pull-right">Swizz~</span>
+		</div>
+		<div class="row"> 
+			<div class="col-2">
+				<form class="receipt" name="_xclick" action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
+					<h1><strong>Cart</strong></h1>
+					<div>
+						<table style="table-layout: fixed">
+							<tr ng-repeat="item in items">
+								<td>
+									<span style="font-family: swizzfont;">{{item.name}}</span>
+								</td>
+								<td style="width: 50px">
+									<span style="font-family: swizzfont;">&dollar; {{item.price}}</span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<hr>
+					<div class="center">
+						<div class="amount">
+							<span style="font-family: swizzfont;">Total: {{displayPrice(amount())}} USD</span><br>
+							<!--Tip: <input type="number" name="tip" min="0" step=".01" ng-model="tip">-->
+						</div>
+						<!--<input type="hidden" name="cmd" value="_xclick">
+						<input type="hidden" name="business" value="carbondonuts@gmail.com">
+						<input type="hidden" name="currency_code" value="GBP">
+						<input type="hidden" name="item_name" value="{{code}}">
+						<input type="hidden" name="amount" value="{{amount()}}">
+						<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">-->
+					</div>
+				</form>
+			</div>
+			<div class="content col-5">
+				<div style="position: relative" id="overlay">
+					<img class="preview" src="images/{{image}}.png" width="555" height="300" border=1>
+				</div>
+				<div class="swizz-select">
+					<div class="selected" ng-click="activateDropdown(s.lvl)">
+						<div class="arrow pull-right">
+							<img src="images/arrow_sans_down-256.png" width=50 height=50>
+						</div>
+						<h1 style="font-family: ariel,sans-serif;">
+							{{s.lvl.name}}
+							<span class="pull-right">&dollar; {{s.lvl.price}}</span>
+						</h1>
+						<p>{{s.lvl.description}}</p>
+					</div>
+					<ul class="selection" ng-class="{swizzselectactive:s.lvl.active}">
+						<li ng-repeat="base in bases" ng-click="swapSelected(s.lvl, base)">
+							<h1 style="font-family: ariel,sans-serif;">
+								{{base.name}}
+								<span class="pull-right">&dollar; {{base.price}}</span>
+							</h1>
+							<p>{{base.description}}</p>
+						</li>
+					</ul>
+				</div>	
+				<div class="row">
+					<div class="col-1">
+						<div class="swizz-button" ng-click="addItemWithCombos(option.colour)">
+							<div class="message">
+								{{option.colour.name}}
+							</div>
+							<div class="price">
+								{{displayPrice(option.colour.price)}}
+							</div>
+						</div>
+						<div class="swizz-button" ng-click="addItemWithCombos(option.background)">
+							<div class="message">
+								{{option.background.name}}
+							</div>
+							<div class="price">	
+								{{displayPrice(option.background.price)}}
+							</div>
+						</div>
+						<div class="swizz-button" ng-click="addItemWithCombos(option.internal)">
+							<div class="message">
+								{{option.internal.name}}
+							</div>
+							<div class="price">	
+								{{displayPrice(option.internal.price)}}
+							</div>
+						</div>
+					</div>
+					<div class="col-1">
+						<div class="swizz-select">
+							<div class="selected" ng-click="activateDropdown(s.shade)">
+								<div class="arrow-small pull-right">
+									<img src="images/arrow_sans_down-256.png" width=32 height=32>
+								</div>
+								<h1 style="font-family: ariel,sans-serif;">
+									{{s.shade.name}}
+								</h1>
+								<p>
+									{{displayPrice(s.shade.price)}}
+								</p>
+							</div>
+							<ul class="selection" ng-class="{swizzselectactive:s.shade.active}">
+								<li ng-repeat="shade in shades" ng-click="swapSelected(s.shade, shade, true)">
+									<h1 style="font-family: ariel,sans-serif;">
+										{{shade.name}}
+										<span class="pull-right">
+											{{displayPrice(shade.price)}}
+										</span>
+									</h1>
+								</li>
+							</ul>
+						</div>	
+						<div class="swizz-select">
+							<div class="selected" ng-click="activateDropdown(s.character)">
+								<div class="arrow-small pull-right">
+									<img src="images/arrow_sans_down-256.png" width=32 height=32>
+								</div>
+								<h1 style="font-family: ariel,sans-serif;">
+									{{s.character.name}}
+								</h1>
+								<p>
+									{{displayPrice(s.character.price)}}
+								</p>
+							</div>
+							<ul class="selection" ng-class="{swizzselectactive:s.character.active}">
+								<li ng-repeat="character in characters" ng-click="swapSelected(s.character, character, true)">
+									<h1 style="font-family: ariel,sans-serif;">
+										{{character.name}}
+										<span class="pull-right">
+											{{displayPrice(character.price)}}
+										</span>
+									</h1>
+								</li>
+							</ul>
+						</div>	
+						<div class="swizz-button" ng-click="addItemWithCombos(option.swizz)">
+							<div class="message">
+								{{option.swizz.name}}
+							</div>
+							<div class="price">	
+								{{displayPrice(option.swizz.price)}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="code">
+				Reference code: <input type="text" ng-model="code" ng-change="decode()"><button ng-click="decode(code)">Apply</button>
+			</div>
+			<hr>
+			<div class="proper">
+				Please contact Swizzlestix before attempting to use this page-code yourself.<br> 
+				Art by Swizzlestix &copy; 2014<br>
+				Coded by DesurtFawks &copy; 2014<br>
+				Extended by Aurelius &copy; 2014
+			</div>
+		</div>
+	</div>
+</body>
+</html>
