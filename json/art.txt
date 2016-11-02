@@ -3,37 +3,45 @@
 		"name": "Level 1",
 		"code": "LV1",
 		"description": "Sketch Stream exclusively",
-		"price": "12",
+		"price": "15",
 		"group":"base",
 		"starting":true,
 		"combinations": [
 			{
 				"combination": [ "Colour", "+1 Character" ],
-				"not": [ "Cell Shade" ],
-				"price": "3"
-			},
-			{
-				"combination": [ "Colour", "+2 Characters" ],
-				"not": [ "Cell Shade" ],
-				"price": "6"
+				"not": [ "Cell Shade", "Blend Shading" ],
+				"price": "5"
 			},
 			{
 				"combination": [ "Colour", "+1 Character", "Cell Shade" ],
-				"price": "5.50"
+				"price": "10"
 			},
 			{
-				"combination": [ "Colour", "+2 Characters", "Cell Shade" ],
-				"price": "11"
+				"combination": [ "Colour", "+1 Character", "Blend Shading" ],
+				"price": "12"
+			},
+			{
+				"combination": [ "Colour", "Closeup/Internal" ],
+				"not": [ "Cell Shade", "Blend Shading" ],
+				"price": "2"
+			},
+			{
+				"combination": [ "Colour", "Closeup/Internal", "Cell Shade" ],
+				"price": "4"
+			},
+			{
+				"combination": [ "Colour", "Closeup/Internal", "Blend Shading" ],
+				"price": "5"
 			}
 		],
 		"options" : [{
 			"name":"Colour",
-			"price":"7",
+			"price":"10",
 			"type":"button",
 			"group":"colour",
 			"code":"CO"
 		},
-		{		
+		{
 			"name":"Background",
 			"price":"N/A",
 			"type":"button",
@@ -42,17 +50,16 @@
 		},
 		{
 			"name":"Cell Shade",
-			"price":"5",
+			"price":"7",
 			"type":"option",
 			"group":"shading",
 			"code":"E"
 		},
 		{
-			"name":"Smooth Shade",
-			"price":"N/A",
-			"type":"option",
+			"name":"Blend Shading",
+			"price":"10",
 			"group":"shading",
-			"code":"SM"
+			"code":"BS"
 		},
 		{
 			"name": "Closeup/Internal",
@@ -66,7 +73,7 @@
 		},
 		{
 			"name": "+Swizz",
-			"price": "5",
+			"price": "10",
 			"type": "button",
 			"group": "swizz",
 			"ignoresfilename": true,
@@ -76,17 +83,10 @@
 		},
 		{
 			"name":"+1 Character",
-			"price":"7",
+			"price":"10",
 			"type":"option",
 			"group":"character",
 			"code":"H1"
-		},
-		{
-			"name":"+2 Characters",
-			"price":"14",
-			"type":"option",
-			"group":"character",
-			"code":"H2"
 		}
 		]
 	},
@@ -94,54 +94,78 @@
 		"name": "Level 2",
 		"description":"Refined Lineart",
 		"code": "LV2",
-		"price": "20",
+		"price": "25",
 		"group":"base",
 		"combinations": [
 			{
 				"combination": [ "Colour", "+1 Character" ],
-				"not": [ "Cell Shade", "Smooth Shade" ],
-				"price": "5"
-			},
-			{
-				"combination": [ "Colour", "+2 Characters" ],
-				"not": [ "Cell Shade", "Smooth Shade" ],
+				"not": [ "Cell Shade", "Smooth Shade", "Blend Shading" ],
 				"price": "10"
 			},
 			{
 				"combination": [ "Colour", "+1 Character", "Cell Shade" ],
-				"not": [ "Smooth Shade" ],
-				"price": "10"
-			},
-			{
-				"combination": [ "Colour", "+2 Characters", "Cell Shade" ],
-				"not": [ "Smooth Shade" ],
+				"not": [ "Smooth Shade", "Blend Shading" ],
 				"price": "15"
 			},
 			{
 				"combination": [ "Colour", "+1 Character", "Smooth Shade" ],
-				"not": [ "Cell Shade" ],
-				"price": "15"
+				"not": [ "Cell Shade", "Blend Shading" ],
+				"price": "20"
+			},
+			{
+				"combination": [ "Colour", "+1 Character", "Blend Shading" ],
+				"not": [ "Cell Shade", "Smooth Shade" ],
+				"price": "25"
+			},
+
+
+
+
+			{
+				"combination": [ "Colour", "+2 Characters" ],
+				"not": [ "Cell Shade", "Smooth Shade", "Blend Shading" ],
+				"price": "20"
+			},
+			{
+				"combination": [ "Colour", "+2 Characters", "Cell Shade" ],
+				"not": [ "Smooth Shade", "Blend Shading" ],
+				"price": "30"
 			},
 			{
 				"combination": [ "Colour", "+2 Characters", "Smooth Shade" ],
-				"not": [ "Cell Shade" ],
-				"price": "25"
+				"not": [ "Cell Shade", "Blend Shading" ],
+				"price": "40"
 			},
 			{
-				"combination": [ "Background", "Colour" ],
+				"combination": [ "Colour", "+2 Characters", "Blend Shading" ],
 				"not": [ "Cell Shade", "Smooth Shade" ],
-				"price": "5"
+				"price": "50"
 			},
+
+
+
 			{
-				"combination": [ "Background", "Cell Shade" ],
-				"not": [ "Smooth Shade" ],
+				"combination": [ "Colour", "+Swizz" ],
+				"not": [ "Cell Shade", "Smooth Shade", "Blend Shading" ],
 				"price": "10"
 			},
 			{
-				"combination": [ "Background", "Smooth Shade" ],
-				"not": [ "Cell Shade" ],
-				"price": "10"
+				"combination": [ "Colour", "+Swizz", "Cell Shade" ],
+				"not": [ "Smooth Shade", "Blend Shading" ],
+				"price": "15"
+			},
+			{
+				"combination": [ "Colour", "+Swizz", "Smooth Shade" ],
+				"not": [ "Cell Shade", "Blend Shading" ],
+				"price": "20"
+			},
+
+			{
+				"combination": [ "Colour", "+Swizz", "Blend Shading" ],
+				"not": [ "Smooth Shade", "Cell Shade" ],
+				"price": "25"
 			}
+
 		],
 		"options": [{
 				"name":"Colour",
@@ -152,7 +176,7 @@
 			},
 			{
 				"name":"Background",
-				"price":"10",
+				"price":"N/A",
 				"type":"button",
 				"group":"background",
 				"code":"B"
@@ -180,8 +204,14 @@
 				"code":"SM"
 			},
 			{
+				"name":"Blend Shading",
+				"price":"20",
+				"group":"shading",
+				"code":"BS"
+			},
+			{
 				"name": "+Swizz",
-				"price": "N/A",
+				"price": "15",
 				"type": "button",
 				"group": "swizz",
 				"ignoresfilename": true,
