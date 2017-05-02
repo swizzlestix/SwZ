@@ -189,7 +189,7 @@
 			},
 			{
 				"name":"Blend Shading",
-				"price":"0",
+				"price":"20",
 				"group":"shading",
 				"code":"BS"
 			},
