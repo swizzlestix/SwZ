@@ -124,12 +124,12 @@
 			{
 				"combination": [ "Colour", "+2 Characters", "Cell Shade" ],
 				"not": [ "Smooth Shade", "Blend Shading" ],
-				"price": "37"
+				"price": "44"
 			},
 			{
 				"combination": [ "Colour", "+2 Characters", "Blend Shading" ],
 				"not": [ "Cell Shade", "Smooth Shade" ],
-				"price": "40"
+				"price": "50"
 			},
 
 
