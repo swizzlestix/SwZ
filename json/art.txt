@@ -3,22 +3,22 @@
 		"name": "Level 1",
 		"code": "LV1",
 		"description": "Sketch Stream exclusively",
-		"price": "15",
+		"price": "20",
 		"group":"base",
 		"starting":true,
 		"combinations": [
 			{
 				"combination": [ "Colour", "+1 Character" ],
 				"not": [ "Cell Shade", "Blend Shading" ],
-				"price": "5"
+				"price": "7"
 			},
 			{
 				"combination": [ "Colour", "+1 Character", "Cell Shade" ],
-				"price": "10"
+				"price": "12"
 			},
 			{
 				"combination": [ "Colour", "+1 Character", "Blend Shading" ],
-				"price": "12"
+				"price": "14"
 			},
 			{
 				"combination": [ "Colour", "Closeup/Internal" ],
@@ -36,81 +36,76 @@
 		],
 		"options" : [{
 			"name":"Colour",
-			"price":"10",
+			"price":"15",
 			"type":"button",
 			"group":"colour",
 			"code":"CO"
-		},
-		{
-			"name":"Background",
-			"price":"N/A",
-			"type":"button",
-			"group":"background",
-			"code":"B"
-		},
-		{
-			"name":"Cell Shade",
-			"price":"7",
-			"type":"option",
-			"group":"shading",
-			"code":"E"
-		},
-		{
-			"name":"Blend Shading",
-			"price":"10",
-			"group":"shading",
-			"code":"BS"
-		},
-		{
-			"name": "Closeup/Internal",
-			"price": "5",
-			"type": "button",
-			"group": "internal",
-			"ignoresfilename": true,
-			"overlayfilename": "Sausage-Sizzle1",
-			"overlayposition": [ 157, 5 ],
-			"code": "CI"
-		},
-		{
-			"name": "+Swizz",
-			"price": "10",
-			"type": "button",
-			"group": "swizz",
-			"ignoresfilename": true,
-			"overlayfilename": "dogsm",
-			"overlayposition": [ 430, 178 ],
-			"code": "HS"
-		},
-		{
-			"name":"+1 Character",
-			"price":"10",
-			"type":"option",
-			"group":"character",
-			"code":"H1"
-		}
+			},
+			{
+				"name":"Background",
+				"price":"N/A",
+				"type":"button",
+				"group":"background",
+				"code":"B"
+			},
+			{
+				"name":"Cell Shade",
+				"price":"10",
+				"type":"option",
+				"group":"shading",
+				"code":"E"
+			},
+			{
+				"name":"Blend Shading",
+				"price":"15",
+				"group":"shading",
+				"code":"BS"
+			},
+			{
+				"name": "Closeup/Internal",
+				"price": "5",
+				"type": "button",
+				"group": "internal",
+				"ignoresfilename": true,
+				"overlayfilename": "Sausage-Sizzle1",
+				"overlayposition": [ 157, 5 ],
+				"code": "CI"
+			},
+			{
+				"name": "+Swizz",
+				"price": "10",
+				"type": "button",
+				"group": "swizz",
+				"ignoresfilename": true,
+				"overlayfilename": "dogsm",
+				"overlayposition": [ 430, 178 ],
+				"code": "HS"
+			},
+			{
+				"name":"+1 Character",
+				"price":"10",
+				"type":"option",
+				"group":"character",
+				"code":"H1"
+			}
 		]
 	},
 	{
 		"name": "Level 2",
 		"description":"Refined Lineart",
 		"code": "LV2",
-		"price": "25",
+		"price": "35",
 		"group":"base",
 		"combinations": [
 			{
 				"combination": [ "Colour", "+1 Character" ],
 				"not": [ "Cell Shade", "Smooth Shade", "Blend Shading" ],
-				"price": "10"
+				"price": "15"
 			},
 			{
 				"combination": [ "Colour", "+1 Character", "Cell Shade" ],
 				"not": [ "Smooth Shade", "Blend Shading" ],
-				"price": "15"
-			},
-			{
-				"combination": [ "Colour", "+1 Character", "Smooth Shade" ],
-				"not": [ "Cell Shade", "Blend Shading" ],
-				"price": "20"
+				"price": "22"
 			},
 			{
 				"combination": [ "Colour", "+1 Character", "Blend Shading" ],
@@ -124,22 +119,17 @@
 			{
 				"combination": [ "Colour", "+2 Characters" ],
 				"not": [ "Cell Shade", "Smooth Shade", "Blend Shading" ],
-				"price": "20"
+				"price": "30"
 			},
 			{
 				"combination": [ "Colour", "+2 Characters", "Cell Shade" ],
 				"not": [ "Smooth Shade", "Blend Shading" ],
-				"price": "30"
-			},
-			{
-				"combination": [ "Colour", "+2 Characters", "Smooth Shade" ],
-				"not": [ "Cell Shade", "Blend Shading" ],
-				"price": "40"
+				"price": "37"
 			},
 			{
 				"combination": [ "Colour", "+2 Characters", "Blend Shading" ],
 				"not": [ "Cell Shade", "Smooth Shade" ],
-				"price": "50"
+				"price": "40"
 			},
 
 
@@ -169,7 +159,7 @@
 		],
 		"options": [{
 				"name":"Colour",
-				"price":"10",
+				"price":"15",
 				"type":"button",
 				"group":"colour",
 				"code":"CO"
@@ -193,19 +183,13 @@
 			},
 			{
 				"name":"Cell Shade",
-				"price":"10",
+				"price":"15",
 				"group":"shading",
 				"code":"E"
 			},
 			{
-				"name":"Smooth Shade",
-				"price":"15",
-				"group":"shading",
-				"code":"SM"
-			},
-			{
 				"name":"Blend Shading",
-				"price":"20",
+				"price":"0",
 				"group":"shading",
 				"code":"BS"
 			},
@@ -219,13 +203,13 @@
 			},
 			{
 				"name":"+1 Character",
-				"price":"15",
+				"price":"20",
 				"group":"character",
 				"code":"H1"
 			},
 			{
 				"name":"+2 Characters",
-				"price":"30",
+				"price":"40",
 				"group":"character",
 				"code":"H2"
 			}
